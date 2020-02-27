@@ -45,20 +45,51 @@ num2 = 0
   #print("resultado:" + str(div))  
 
 
-texto = """texto de ejemplo para buscar
-otro texto
-otro texto mas
-más texto
-y el último
-"""
+#texto = "texto para cambiar"
 
-import re
+#import re
 
-resultado = re.findall("texto", texto)
-if(resultado):
-  print("palabra encontrada " + str(len(resultado)) + " veces")
-else:
-  print("texto no encontrado")  
+#print(texto)
+#resultado = re.sub("para cambiar","cambiado", texto)
+#print(resultado)
+
+#import json
+
+#producto = {"item": "001", "color": "rojo", "valor": "1200"}
+
+#prodjson = json.dumps(producto)
+#print(prodjson)
+
+#proddicc = json.loads(prodjson)
+#print(proddicc["valor"])
+
+from datetime import datetime
+
+fyh = datetime.now()
+#print(fyh)
+
+#print("año:", fyh.year)
+#print("mes:", fyh.month)
+#print("día:", fyh.day)
+
+#print("hora:", fyh.hour)
+#print("minutos:", fyh.minute)
+#print("segundo:", fyh.second)
+
+
+import sqlite3
+
+conexion = sqlite3.connect("datos.db")
+cursor = conexion.cursor()
+
+cursor.execute("UPDATE personas SET edad = 30 where nombre = 'Luis'")  
+
+conexion.commit()  
+conexion.close()
+
+
+
+
 
 
 
